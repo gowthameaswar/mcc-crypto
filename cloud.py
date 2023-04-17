@@ -26,7 +26,7 @@ prices['timestamp'] = pd.to_datetime(prices['timestamp'], unit='ms')
 prices.set_index('timestamp', inplace=True)
 
 # Define the window size for the LSTM model
-window_size = st.sidebar.number_input('Choose a window size for the LSTM model:', value=165, min_value=1, max_value=365, step=1)
+window_size = st.sidebar.number_input('Choose a window size for the LSTM model:', value=200, min_value=1, max_value=365, step=1)
 
 # Define a function to create the input and output sequences
 def create_sequences(data, window_size):
@@ -70,7 +70,7 @@ loss = model.evaluate(X_test, y_test, verbose=0)
 st.write('Test loss:', loss)
 
 # Generate predictions for the next 7 days
-future_days = st.sidebar.number_input('Choose the number of days to predict for:', value=15, min_value=1, max_value=30, step=1)
+future_days = st.sidebar.number_input('Choose the number of days to predict for:', value=7, min_value=1, max_value=30, step=1)
 last_sequence = X[-1]
 predictions = []
 for i in range(future_days):
