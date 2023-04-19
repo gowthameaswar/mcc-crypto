@@ -22,7 +22,7 @@ def main():
 def predictor():
     # Title and description
     st.title('Cryptocurrency Price Predictor')
-    st.write('This app uses LSTM to predict cryptocurrency prices for the next 7 days.')
+    st.write('This app uses LSTM to predict cryptocurrency prices for the next 15 days.')
 
     # Get coin name input from user
     coin_name = st.text_input('Enter the name of the coin:', 'bitcoin')
