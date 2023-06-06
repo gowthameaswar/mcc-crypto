@@ -118,23 +118,7 @@ def predictor():
 
 
 
-    # Create a bar chart of market caps
-    market_caps = pd.DataFrame(data['market_caps'], columns=['timestamp', 'market_cap'])
-    market_caps['timestamp'] = pd.to_datetime(market_caps['timestamp'], unit='ms')
-    market_caps.set_index('timestamp', inplace=True)
-    fig = go.Figure()
-    fig.add_trace(go.Bar(x=market_caps.index.tolist(), y=market_caps['market_cap'].tolist(), name='Market Cap'))
-    fig.update_layout(title='Market Cap', xaxis_title='Date', yaxis_title='Market Cap')
-    st.plotly_chart(fig)
-
-    # Create a bar chart of total volumes
-    total_volumes = pd.DataFrame(data['total_volumes'], columns=['timestamp', 'volume'])
-    total_volumes['timestamp'] = pd.to_datetime(total_volumes['timestamp'], unit='ms')
-    total_volumes.set_index('timestamp', inplace=True)
-    fig = go.Figure()
-    fig.add_trace(go.Bar(x=total_volumes.index.tolist(), y=total_volumes['volume'].tolist(), name='Volume'))
-    fig.update_layout(title='Total Volume', xaxis_title='Date', yaxis_title='Volume')
-    st.plotly_chart(fig)
+    
 
 def view():
     # Set page title
